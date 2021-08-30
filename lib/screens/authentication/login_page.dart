@@ -21,7 +21,7 @@ class _LoginPageState extends State<LoginPage> {
         children: [
           Container(
             alignment: Alignment.topCenter,
-            child: Image.asset("assets/images/login_wallpapper.png", fit: BoxFit.fill,scale: 0.9),
+            child: Image.asset("assets/images/login_wallpapper.png", fit: BoxFit.cover,scale: 0.7,),
           ),
           Positioned(
             top: 108,
@@ -138,29 +138,26 @@ class _LoginPageState extends State<LoginPage> {
               ),
           ),
           Positioned(
-            bottom: 100.0,
-            child: Container(
-              alignment: Alignment.bottomCenter,
-              child: Padding(
-                padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 76),
-                child: Row(
-                  children: [
-                    Text('Dont have an account?', style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.w500)), // Text
-                    Container(
+            height: 27.0,
+            width: 251.0,
+            left: 73.0,
+            top: 553.0,
+          child: Row(
+            children: [
+              Text('Dont have an account?', style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.w500)), // Text
+              Container(
 
-                      child: MaterialButton(
-                        padding: EdgeInsets.only(left: 0.0),
-                        onPressed: () {
-                          Navigator.pushNamed(context, SignUp.id);
-                        },
-                        enableFeedback: false,
-                        child: Text('Sign Up',style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16,color: Color(0xFFFFBD00))),
-                      ),
-                    )
-                  ],
+                child: MaterialButton(
+                  padding: EdgeInsets.only(left: 0.0),
+                  onPressed: () {
+                    Navigator.pushNamed(context, SignUp.id);
+                  },
+                  enableFeedback: false,
+                  child: Text('Sign Up',style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16,color: Color(0xFFFFBD00))),
                 ),
-              ),
-            ),
+              )
+            ],
+          ),
           )
         ],
       ),

@@ -27,7 +27,7 @@ class _SignUpState extends State<SignUp> {
             top: 108,
             child: Container(
               width: 345,
-              height: 592,
+              height: 539,
               margin: EdgeInsets.all(20.0),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(12),
@@ -127,27 +127,7 @@ class _SignUpState extends State<SignUp> {
                           ),
                         )
                     ),
-                    Padding(
-                      padding: const EdgeInsets.only(top: 24.0),
-                      child: TextFormField(
 
-                          decoration: InputDecoration(
-                            prefixIcon: numberpre(),
-                            hintText: "Number",
-                            labelText: 'Number',
-                            focusedBorder: OutlineInputBorder(
-                                borderSide: BorderSide(color: Color(0xFFFFBD00))
-                            ),
-                            filled: true,
-                            fillColor: Color.fromRGBO(239, 242, 245, 0.4),
-                            contentPadding: EdgeInsets.symmetric(vertical: 16.0, horizontal: 15),
-                            enabledBorder: OutlineInputBorder(borderRadius:BorderRadius.circular(5.0),
-                                borderSide: BorderSide(color: Color(0xFFE0E5EB))),
-
-
-                          )
-                      ),
-                    ),
                     Padding(
                       padding: const EdgeInsets.only(top: 24.0),
                       child: TextFormField(
@@ -202,10 +182,12 @@ class _SignUpState extends State<SignUp> {
             ),
 
           ),
-          Container(
-            alignment: Alignment.bottomCenter,
-            padding: EdgeInsets.only(bottom: 20.0),
-            child: Row(
+          Positioned(
+            left: 55.0,
+            top: 679.0,
+            width: 270.0,
+            height: 27.54,
+          child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text('Already have an account?', style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.w400),),
@@ -222,29 +204,9 @@ class _SignUpState extends State<SignUp> {
               ],
             ),
           )
-
         ],
       ),
     );
   }
 }
 
-class numberpre extends StatelessWidget {
-  const numberpre({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Padding(
-          padding: const EdgeInsets.only(left: 20.0),
-          child: Container(
-            alignment: Alignment.centerLeft,
-            child: Text("91+", style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),),
-          ),
-        ),
-        // Icon(Icons.arrow_drop_down),
-      ],
-    );
-  }
-}
