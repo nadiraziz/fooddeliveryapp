@@ -18,6 +18,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   google_fonts: ^2.1.0
   otp_text_field: ^1.1.1
+  intl_phone_number_input: ^0.7.0+2
 
 dev_dependencies:
   flutter_test:

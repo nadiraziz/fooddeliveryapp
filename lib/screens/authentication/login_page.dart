@@ -1,7 +1,8 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:fooddelivery/screens/authentication/forgot_password.dart';
+import 'package:fooddelivery/screens/authentication/new_password.dart';
+import 'package:fooddelivery/screens/authentication/sign_up.dart';
 
 
 
@@ -77,11 +78,13 @@ class _LoginPageState extends State<LoginPage> {
                     Padding(
                       padding: const EdgeInsets.only(top: 24.0),
                       child: TextFormField(
+                          obscureText: true,
                         // onChanged: (val) => {
                         //   setState(() => email = val)
                         // },
                         // validator: (val) => val!.isEmpty ? 'Enter a Email': null,
                         decoration: InputDecoration(
+
                           hintText: "Password",
                           suffixIcon: Icon(Icons.visibility),
                           border: OutlineInputBorder(),
@@ -96,8 +99,9 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                       ),
                     Container(
-                      child: MaterialButton(onPressed: () {
-                        Navigator.pushNamed(context, ForgotPass.id);
+                      child: MaterialButton(
+                        onPressed: () {
+                          Navigator.pushNamed(context, NewPass.id);
                       },
                         padding: EdgeInsets.symmetric(vertical: 16),
                         enableFeedback: false,
@@ -141,8 +145,18 @@ class _LoginPageState extends State<LoginPage> {
                 padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 76),
                 child: Row(
                   children: [
-                    Text('Dont have an account?', style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.w500),),
-                    Text(' sign up', style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.w500, color: Color(0xFFFFBD00)),),
+                    Text('Dont have an account?', style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.w500)), // Text
+                    Container(
+
+                      child: MaterialButton(
+                        padding: EdgeInsets.only(left: 0.0),
+                        onPressed: () {
+                          Navigator.pushNamed(context, SignUp.id);
+                        },
+                        enableFeedback: false,
+                        child: Text('Sign Up',style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16,color: Color(0xFFFFBD00))),
+                      ),
+                    )
                   ],
                 ),
               ),

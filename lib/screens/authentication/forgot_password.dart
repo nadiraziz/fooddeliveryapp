@@ -99,7 +99,7 @@ class _ForgotPassState extends State<ForgotPass> {
 
                           child: Padding(
                             padding: const EdgeInsets.symmetric(vertical: 16.0),
-                            child: Text('Submit', style: TextStyle(color: Color(0xFF38465A),fontWeight: FontWeight.w500),),
+                            child: Text('NEXT', style: TextStyle(color: Color(0xFF38465A),fontWeight: FontWeight.w500),),
                           ),
                         ),
 

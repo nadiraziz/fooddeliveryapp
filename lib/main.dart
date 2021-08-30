@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:fooddelivery/screens/authentication/delivery_address_page.dart';
 import 'package:fooddelivery/screens/authentication/forgot_password.dart';
 import 'package:fooddelivery/screens/authentication/login_page.dart';
+import 'package:fooddelivery/screens/authentication/new_password.dart';
+import 'package:fooddelivery/screens/authentication/sign_up.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 void main() {
@@ -23,6 +26,9 @@ class MyApp extends StatelessWidget {
       routes: {
         LoginPage.id: (context) => LoginPage(),
         ForgotPass.id: (context) => ForgotPass(),
+        NewPass.id: (context) => NewPass(),
+        SignUp.id: (context) => SignUp(),
+        DeliveryAddress.id: (context) => DeliveryAddress(),
       },
     );
   }
