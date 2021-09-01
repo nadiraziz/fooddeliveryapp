@@ -49,19 +49,33 @@ class _HomePageState extends State<HomePage> {
             const DrawerHeader(
               decoration: BoxDecoration(
                 color: Color(0xFFFFBD00),
-              ),
-              child: Text(
-                'Drawer Header',
-                style:
-                TextStyle(color: Color(0xFF38465A), fontWeight: FontWeight.bold),
-              ),
+                image: DecorationImage(image: AssetImage('assets/images/ukka_side_menu.png')),
+              ), child: null,
             ),
             ListTile(
-              title: const Text('Item 1'),
+            visualDensity: VisualDensity(horizontal: 0, vertical: -4),
+              tileColor: Color(0xFFE5E5E5),
+              title: const Text('👋 Hello! farseen..'),
             ),
             ListTile(
-              title: const Text('Item 2'),
+              title: const Text('Offer zone'),
             ),
+            ListTile(
+              title: const Text('My Address'),
+            ),
+            ListTile(
+              title: const Text('My Orders'),
+            ),
+            ListTile(
+              title: const Text('Order History'),
+            ),
+            ListTile(
+              title: const Text('My Cart'),
+            ),
+            ListTile(
+              title: const Text('Log Out'),
+            ),
+
           ],
         ),
       ),
@@ -84,6 +98,7 @@ class _HomePageState extends State<HomePage> {
           BottomNavigationBarItem(
             icon: Image.asset('assets/images/home_icon.png'),
             label: 'Home',
+
           ),
           BottomNavigationBarItem(
             icon: Image.asset('assets/images/category_icon.png'),

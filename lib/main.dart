@@ -6,6 +6,8 @@ import 'package:fooddelivery/screens/authentication/new_password.dart';
 import 'package:fooddelivery/screens/authentication/sign_up.dart';
 import 'package:fooddelivery/screens/home/cart.dart';
 import 'package:fooddelivery/screens/home/home.dart';
+import 'package:fooddelivery/screens/home/my_address.dart';
+import 'package:fooddelivery/screens/home/order_summary.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 void main() {
@@ -33,6 +35,8 @@ class MyApp extends StatelessWidget {
         DeliveryAddress.id: (context) => DeliveryAddress(),
         HomePage.id: (context) => HomePage(),
         CartPage.id: (context) => CartPage(),
+        OrderSummary.id: (context) => OrderSummary(),
+        MyAddress.id: (context) => MyAddress(),
       },
     );
   }
