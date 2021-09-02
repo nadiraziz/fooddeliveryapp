@@ -7,7 +7,10 @@ import 'package:fooddelivery/screens/authentication/sign_up.dart';
 import 'package:fooddelivery/screens/home/cart.dart';
 import 'package:fooddelivery/screens/home/home.dart';
 import 'package:fooddelivery/screens/home/my_address.dart';
+import 'package:fooddelivery/screens/home/my_orders.dart';
+import 'package:fooddelivery/screens/home/order_history.dart';
 import 'package:fooddelivery/screens/home/order_summary.dart';
+import 'package:fooddelivery/screens/home/status.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 void main() {
@@ -26,7 +29,7 @@ class MyApp extends StatelessWidget {
           primaryTextTheme: GoogleFonts.robotoTextTheme()),
       darkTheme: ThemeData(
           brightness: Brightness.dark) ,
-      initialRoute: CartPage.id,
+      initialRoute: Status.id,
       routes: {
         LoginPage.id: (context) => LoginPage(),
         ForgotPass.id: (context) => ForgotPass(),
@@ -37,6 +40,9 @@ class MyApp extends StatelessWidget {
         CartPage.id: (context) => CartPage(),
         OrderSummary.id: (context) => OrderSummary(),
         MyAddress.id: (context) => MyAddress(),
+        OrderHistory.id: (context) => OrderHistory(),
+        MyOrders.id: (context) => MyOrders(),
+        Status.id: (context) => Status(),
       },
     );
   }
