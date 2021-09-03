@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
           primaryTextTheme: GoogleFonts.robotoTextTheme()),
       darkTheme: ThemeData(
           brightness: Brightness.dark) ,
-      initialRoute: Status.id,
+      initialRoute: OrderHistory.id,
       routes: {
         LoginPage.id: (context) => LoginPage(),
         ForgotPass.id: (context) => ForgotPass(),

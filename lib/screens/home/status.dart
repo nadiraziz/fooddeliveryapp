@@ -15,8 +15,7 @@ class _StatusState extends State<Status> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
-      body: AddtoCart,
+      body: networkError,
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: Colors.white,
         selectedLabelStyle: TextStyle(
@@ -56,8 +55,10 @@ class _StatusState extends State<Status> {
 
 
 StatusContent success = StatusContent(statusImg: 'assets/images/success.png',statusSubtitle: 'Your order as placed successfully . ', statusTitle: 'Order placed',buttonText: 'CONTINUE SHOPING',);
-StatusContent AddtoCart = StatusContent(statusImg: 'assets/images/cart_status.png',statusSubtitle: 'explore our products and exciting new offers today! ', statusTitle: 'Your cart is empty',buttonText: 'Start shoping',);
-StatusContent netWorkError = StatusContent(statusImg: 'assets/images/network_error.png',statusSubtitle: 'connect  to the internet to browse & shop our products', statusTitle: 'oops something wrong ',buttonText: 'Try again',);
+StatusContent emptyCart = StatusContent(statusImg: 'assets/images/cart_status.png',statusSubtitle: 'explore our products and exciting new offers today! ', statusTitle: 'Your cart is empty',buttonText: 'Start shoping',);
+StatusContent networkError = StatusContent(statusImg: 'assets/images/network_error.png',statusSubtitle: 'connect  to the internet to browse & shop our products', statusTitle: 'oops something wrong ',buttonText: 'Try again',);
+
+
 class StatusContent extends StatelessWidget {
   final String statusTitle;
   final String statusSubtitle;

@@ -144,7 +144,7 @@ class _LoginPageState extends State<LoginPage> {
             top: 553.0,
           child: Row(
             children: [
-              Text('Dont have an account?', style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.w500)), // Text
+              Text('Don\'t have an account?', style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.w500)), // Text
               Container(
 
                 child: MaterialButton(
