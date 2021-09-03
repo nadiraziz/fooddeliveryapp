@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:fooddelivery/screens/home/components/bottom_nav.dart';
 
 class MyOrders extends StatefulWidget {
   const MyOrders({Key? key}) : super(key: key);
@@ -10,7 +11,7 @@ class MyOrders extends StatefulWidget {
 }
 
 class _MyOrdersState extends State<MyOrders> {
-  int _currentIndex = 0;
+
 
   @override
   Widget build(BuildContext context) {
@@ -184,14 +185,14 @@ class _MyOrdersState extends State<MyOrders> {
                                         ],
                                       ),
                                     ),
-                                    Text(
-                                      itemData[index].discription,
-                                      style: TextStyle(
-                                          color: Colors.grey[700],
-                                          fontSize: 15,
-                                          letterSpacing: 0.3,
-                                          height: 1.3),
-                                    ),
+                                    // Text(
+                                    //   itemData[index].discription,
+                                    //   style: TextStyle(
+                                    //       color: Colors.grey[700],
+                                    //       fontSize: 15,
+                                    //       letterSpacing: 0.3,
+                                    //       height: 1.3),
+                                    // ),
                                   ]),
                             ),
                             headerBuilder:
@@ -221,39 +222,7 @@ class _MyOrdersState extends State<MyOrders> {
           ),
         ],
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Colors.white,
-        selectedLabelStyle: TextStyle(
-          color: Colors.black,
-        ),
-        unselectedLabelStyle: TextStyle(
-          color: Colors.black,
-        ),
-        currentIndex: _currentIndex,
-        onTap: (newIndex) => setState(() {
-          _currentIndex = newIndex;
-        }),
-        type: BottomNavigationBarType.fixed,
-        // this will be set when a new tab is tapped
-        items: [
-          BottomNavigationBarItem(
-            icon: Image.asset('assets/images/home_icon.png'),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            icon: Image.asset('assets/images/category_icon.png'),
-            label: 'Category',
-          ),
-          BottomNavigationBarItem(
-            icon: Image.asset('assets/images/offer_icon.png'),
-            label: 'Offer',
-          ),
-          BottomNavigationBarItem(
-            icon: Image.asset('assets/images/cart_icon.png'),
-            label: 'Cart',
-          )
-        ],
-      ),
+      bottomNavigationBar: BottomNav(),
     );
   }
 }
@@ -261,30 +230,23 @@ class _MyOrdersState extends State<MyOrders> {
 List<ItemModel> itemData = <ItemModel>[
   ItemModel(
       headerItem: 'Details',
-      discription: "",
       colorsItem: Color(0xFF283547),
       img: 'assets/images/ashirvaad.png'),
 ];
 
+
+
 class ItemModel {
   bool expanded;
   String headerItem;
-  String discription;
   Color colorsItem;
   String img;
 
   ItemModel(
       {this.expanded: false,
       required this.headerItem,
-      required this.discription,
       required this.colorsItem,
       required this.img});
 
-//   Container(
-// //     padding: EdgeInsets.all(10),
-// //     child: Text(
-// //     itemData[index].headerItem,
-// //     style: TextStyle(color:itemData[index].colorsItem, fontSize: 18),
-// //     ),
-// // );
 }
+

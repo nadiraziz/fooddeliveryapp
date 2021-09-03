@@ -68,7 +68,7 @@ class _OrderHistoryState extends State<OrderHistory> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text('Aashivaad', style: TextStyle( fontSize: 20)),
+                        Text('Aashirvaad', style: TextStyle( fontSize: 20)),
                         Text('Wheat Powder', style: TextStyle( fontSize: 14,color: Colors.grey)),
                         Padding(
                           padding: const EdgeInsets.symmetric(vertical: 10.0),
