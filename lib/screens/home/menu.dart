@@ -22,9 +22,7 @@ class _MenuState extends State<Menu> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(backgroundColor: Color(0xFFFAC82D),
-        iconTheme: IconThemeData(color: Color(0xFF38465A)),
-        title: homeHead()),
+      appBar: homeHead(),
       drawer: NavDrawer(),
       body: Column(
         children: [
@@ -32,8 +30,8 @@ class _MenuState extends State<Menu> {
             padding: const EdgeInsets.only(top: 20.5, right: 160.0, bottom: 20.0),
             child: Text('Restaurants and Cafe', style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500, color: Color(0xFF38465A)),),
           ),
-          Expanded(
 
+          Expanded(
             child: ListView.builder(
               shrinkWrap: true,
               itemCount: foodData.length,
@@ -92,22 +90,22 @@ class _MenuState extends State<Menu> {
 }
 
 
-class FoodMenu{
+class ResturantMenu{
   bool expanded;
   String foodName;
   String ingredients;
   String foodImg;
 
-  FoodMenu({required this.foodName, required this.ingredients,this.expanded: false, required this.foodImg});
+  ResturantMenu({required this.foodName, required this.ingredients,this.expanded: false, required this.foodImg});
 }
 
-List<FoodMenu> foodData = <FoodMenu> [
-  FoodMenu(foodName: 'Mexican fried chicken', ingredients: 'Combo, broast , chaines, pizza..', foodImg: 'assets/images/resturants/1.png'),
-  FoodMenu(foodName: 'Sulthan palace', ingredients: 'arabian, broast , chaines, pizza..', foodImg: 'assets/images/resturants/2.png'),
-  FoodMenu(foodName: '31 August resto cafe', ingredients: 'pastry, shawarma, juice, combo', foodImg: 'assets/images/resturants/3.png'),
-  FoodMenu(foodName: 'Razin restaturnt', ingredients: 'biriyani, porotta, juice,  ', foodImg: 'assets/images/resturants/2.png'),
-  FoodMenu(foodName: 'Mexican fried chicken', ingredients: 'Combo, broast , chaines, pizza..', foodImg: 'assets/images/resturants/4.png'),
-  FoodMenu(foodName: 'Mexican fried chicken', ingredients: 'Combo, broast , chaines, pizza..', foodImg: 'assets/images/resturants/3.png'),
+List<ResturantMenu> foodData = <ResturantMenu> [
+  ResturantMenu(foodName: 'Mexican fried chicken', ingredients: 'Combo, broast , chaines, pizza..', foodImg: 'assets/images/resturants/1.png'),
+  ResturantMenu(foodName: 'Sulthan palace', ingredients: 'arabian, broast , chaines, pizza..', foodImg: 'assets/images/resturants/2.png'),
+  ResturantMenu(foodName: '31 August resto cafe', ingredients: 'pastry, shawarma, juice, combo', foodImg: 'assets/images/resturants/3.png'),
+  ResturantMenu(foodName: 'Razin restaturnt', ingredients: 'biriyani, porotta, juice,  ', foodImg: 'assets/images/resturants/2.png'),
+  ResturantMenu(foodName: 'Mexican fried chicken', ingredients: 'Combo, broast , chaines, pizza..', foodImg: 'assets/images/resturants/4.png'),
+  ResturantMenu(foodName: 'Mexican fried chicken', ingredients: 'Combo, broast , chaines, pizza..', foodImg: 'assets/images/resturants/3.png'),
 
 ];
 

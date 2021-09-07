@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:fooddelivery/screens/home/components/bottom_nav.dart';
 
 
 class OrderHistory extends StatefulWidget {
@@ -91,36 +92,7 @@ class _OrderHistoryState extends State<OrderHistory> {
           ),
         ],
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Colors.white,
-        selectedLabelStyle: TextStyle(
-          color: Colors.black,
-        ),
-        unselectedLabelStyle: TextStyle(
-          color: Colors.black,
-        ),
-        currentIndex: _currentIndex,
-        onTap:(newIndex) => setState((){_currentIndex = newIndex;}),
-        type: BottomNavigationBarType.fixed, // this will be set when a new tab is tapped
-        items: [
-          BottomNavigationBarItem(
-            icon: Image.asset('assets/images/home_icon.png'),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            icon: Image.asset('assets/images/category_icon.png'),
-            label: 'Category',
-          ),
-          BottomNavigationBarItem(
-            icon: Image.asset('assets/images/offer_icon.png'),
-            label: 'Offer',
-          ),
-          BottomNavigationBarItem(
-            icon: Image.asset('assets/images/cart_icon.png'),
-            label: 'Cart',
-          )
-        ],
-      ),
+      bottomNavigationBar: BottomNav(),
     );
   }
 }

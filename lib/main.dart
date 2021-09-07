@@ -12,6 +12,7 @@ import 'package:fooddelivery/screens/home/my_address.dart';
 import 'package:fooddelivery/screens/home/my_orders.dart';
 import 'package:fooddelivery/screens/home/order_history.dart';
 import 'package:fooddelivery/screens/home/order_summary.dart';
+import 'package:fooddelivery/screens/home/resturant_food.dart';
 import 'package:fooddelivery/screens/home/status.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -31,7 +32,7 @@ class MyApp extends StatelessWidget {
           primaryTextTheme: GoogleFonts.robotoTextTheme()),
       darkTheme: ThemeData(
           brightness: Brightness.dark) ,
-      initialRoute: Menu.id,
+      initialRoute: FoodMenu.id,
       routes: {
         LoginPage.id: (context) => LoginPage(),
         ForgotPass.id: (context) => ForgotPass(),
@@ -47,6 +48,7 @@ class MyApp extends StatelessWidget {
         Status.id: (context) => Status(),
         Category.id: (context) => Category(),
         Menu.id: (context) => Menu(),
+        FoodMenu.id: (context) => FoodMenu(resturant: 'Mexican fried chicken',),
       },
     );
   }
