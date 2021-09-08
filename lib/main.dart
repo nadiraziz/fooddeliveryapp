@@ -6,7 +6,9 @@ import 'package:fooddelivery/screens/authentication/new_password.dart';
 import 'package:fooddelivery/screens/authentication/sign_up.dart';
 import 'package:fooddelivery/screens/home/cart.dart';
 import 'package:fooddelivery/screens/home/category.dart';
+import 'package:fooddelivery/screens/home/grocery_menu.dart';
 import 'package:fooddelivery/screens/home/home.dart';
+import 'package:fooddelivery/screens/home/list_view_grocery.dart';
 import 'package:fooddelivery/screens/home/menu.dart';
 import 'package:fooddelivery/screens/home/my_address.dart';
 import 'package:fooddelivery/screens/home/my_orders.dart';
@@ -32,7 +34,7 @@ class MyApp extends StatelessWidget {
           primaryTextTheme: GoogleFonts.robotoTextTheme()),
       darkTheme: ThemeData(
           brightness: Brightness.dark) ,
-      initialRoute: FoodMenu.id,
+      initialRoute: HomePage.id,
       routes: {
         LoginPage.id: (context) => LoginPage(),
         ForgotPass.id: (context) => ForgotPass(),
@@ -48,6 +50,8 @@ class MyApp extends StatelessWidget {
         Status.id: (context) => Status(),
         Category.id: (context) => Category(),
         Menu.id: (context) => Menu(),
+        GroceryMenu.id: (context) => GroceryMenu(),
+        ListGroceryMenu.id: (context) => ListGroceryMenu(),
         FoodMenu.id: (context) => FoodMenu(resturant: 'Mexican fried chicken',),
       },
     );

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 AppBar homeHead() {
   return AppBar(
-    toolbarHeight: 150,
+    toolbarHeight: 130,
     iconTheme: IconThemeData(color: Color(0xFF38465A)),
     backgroundColor: Color(0xFFFAC82D),
     // leading: Icon(Icons.arrow_back, color: Color(0xFF38465A), size: 24),
@@ -22,9 +22,9 @@ AppBar homeHead() {
       ],
     ),
     bottom: PreferredSize(
-      preferredSize: Size.fromHeight(5.0),
+      preferredSize: Size.fromHeight(1.0),
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 10.0),
+        padding: const EdgeInsets.only(bottom: 10.0, left: 16.0, right: 16.0),
         child: TextField(
             style: TextStyle(
                 height: 0.8,
