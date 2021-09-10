@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:fooddelivery/screens/home/components/bottom_nav.dart';
+import 'package:fooddelivery/constant.dart';
+import 'package:fooddelivery/screens/home/main_home.dart';
 import 'package:fooddelivery/screens/home/components/home_head.dart';
 import 'package:fooddelivery/screens/home/components/navdrawer.dart';
 
@@ -21,8 +22,8 @@ class _CategoryState extends State<Category> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(backgroundColor: Color(0xFFFAC82D),
-        iconTheme: IconThemeData(color: Color(0xFF38465A)),
+      appBar: AppBar(backgroundColor: kPrimaryColor,
+        iconTheme: IconThemeData(color: kSecondaryColor),
         title: homeHead(),
       ),
       drawer: NavDrawer(),
@@ -54,7 +55,7 @@ class _CategoryState extends State<Category> {
                                     child: Text(
                                       categoryData[index].subCategory,
                                       style: TextStyle(
-                                          color: Color(0xFF38465A),
+                                          color: kSecondaryColor,
                                           fontSize: 15,
                                           letterSpacing: 0.3,
                                           height: 1.3),
@@ -68,7 +69,7 @@ class _CategoryState extends State<Category> {
                           (BuildContext context, bool isExpanded) {
                         return Container(
                           child: ListTile(
-                            title: Text(categoryData[index].categoryName, style: TextStyle(fontSize: 18, color: Color(0xFF38465A), fontWeight: FontWeight.w400),),
+                            title: Text(categoryData[index].categoryName, style: TextStyle(fontSize: 18, color: kSecondaryColor, fontWeight: FontWeight.w400),),
                           ),
                         );
                         //

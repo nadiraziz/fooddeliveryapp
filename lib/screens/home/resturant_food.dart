@@ -1,7 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:fooddelivery/screens/home/components/home_head.dart';
+import 'package:fooddelivery/constant.dart';
+import 'package:fooddelivery/screens/home/components/location_bar.dart';
 import 'package:fooddelivery/screens/home/components/navdrawer.dart';
+import 'package:fooddelivery/screens/home/components/search_nav.dart';
+import 'package:fooddelivery/screens/home/main_home.dart';
 
 
 
@@ -22,53 +25,16 @@ class _FoodMenuState extends State<FoodMenu> {
     return Scaffold(
       appBar: AppBar(
         toolbarHeight: 150,
-        iconTheme: IconThemeData(color: Color(0xFF38465A)),
-        backgroundColor: Color(0xFFFAC82D),
+        iconTheme: IconThemeData(color: kSecondaryColor),
+        backgroundColor: kPrimaryColor,
         // leading: Icon(Icons.arrow_back, color: Color(0xFF38465A), size: 24),
-        title: Row(
-          children: [
-            Icon(Icons.location_pin, color: Color(0xFF38465A), size: 14),
-            SizedBox(width: 10.0),
-            Text('Location : ',
-                style: TextStyle(fontSize: 14, color: Color(0xFF38465A))),
-            Text('Morayur',
-                style: TextStyle(
-                    fontSize: 14,
-                    color: Color(0xFF38465A),
-                    fontWeight: FontWeight.bold)),
-            SizedBox(width: 10.0),
-            Icon(Icons.keyboard_arrow_down, color: Color(0xFF38465A), size: 24),
-          ],
-        ),
+        title: LocationBar(),
         leading: Icon(Icons.arrow_back),
         bottom: PreferredSize(
           preferredSize: Size.fromHeight(5.0),
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 10.0),
-            child: TextField(
-              style: TextStyle(
-                height: 0.8,
-
-              ),
-              decoration: new InputDecoration(
-                  hoverColor: Colors.white,
-                  focusColor: Colors.white,
-                  enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
-                      borderSide: BorderSide(color: Colors.white)
-                  ),
-                  prefixIcon: Icon(Icons.search),
-                  fillColor: Colors.white,
-                  filled: true,
-                  // border: OutlineInputBorder(
-                  //   borderSide: BorderSide(color: Colors.white),
-                  //   borderRadius: BorderRadius.circular(10)
-                  // ),
-                  hintText: 'What are you looking for?',
-                  hintStyle: TextStyle(fontSize: 12, color: Color(0xFF737C89))
-
-              ),
-            ),
+            child: searchNav(),
           ),
         ),
       ),
@@ -87,20 +53,20 @@ class _FoodMenuState extends State<FoodMenu> {
                       style: TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.w500,
-                          color: Color(0xFF38465A)),
+                          color: kSecondaryColor),
                     ),
                     Text(
                       widget.resturant,
                       style: TextStyle(
                           fontSize: 14,
                           fontWeight: FontWeight.w400,
-                          color: Color(0xFFA8AEB7)),
+                          color: kMutedTextColor),
                     ),
                   ],
                 ),
               ),
               Divider(
-                color: Colors.grey,
+                color: kMutedTextColor,
               )
             ],
           ),
@@ -126,6 +92,7 @@ class _FoodMenuState extends State<FoodMenu> {
           ),
         ],
       ),
+      bottomNavigationBar: BottomNav(),
     );
   }
 }
@@ -140,7 +107,7 @@ Widget foodCart(){
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
       Image.asset(
-      'assets/images/resturants/foodmenu1.png',
+      'assets/images/restaurants/foodmenu1.png',
       fit: BoxFit.fill, width: double.infinity),
       Padding(
         padding: const EdgeInsets.all(8.0),
@@ -152,14 +119,14 @@ Widget foodCart(){
               style: TextStyle(
                   fontSize: 13,
                   fontWeight: FontWeight.w500,
-                  color: Color(0xFF38465A)),
+                  color: kSecondaryColor),
             ),
             Text(
               'Mexican family combo 1',
               style: TextStyle(
                   fontSize: 13,
                   fontWeight: FontWeight.w400,
-                  color: Color(0xFF38465A)),
+                  color: kSecondaryColor),
             ),
           ],
         ),
@@ -171,7 +138,7 @@ Widget foodCart(){
           child: ElevatedButton(
             onPressed: () {},
             style: ElevatedButton.styleFrom(
-              primary: Color(0xFFFFD140),
+              primary: kPrimaryColor,
               shape: RoundedRectangleBorder(
                 borderRadius: new BorderRadius.circular(4.0),
               ),
@@ -179,7 +146,7 @@ Widget foodCart(){
             child: Text(
               'Add',
               style: TextStyle(
-                  color: Color(0xFF38465A),
+                  color: kSecondaryColor,
                   fontWeight: FontWeight.w500),
             ),
           ),

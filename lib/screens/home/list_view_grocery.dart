@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:fooddelivery/screens/home/components/bottom_nav.dart';
+import 'package:fooddelivery/constant.dart';
+import 'package:fooddelivery/screens/home/components/category_button.dart';
 import 'package:fooddelivery/screens/home/components/home_head.dart';
 import 'package:fooddelivery/screens/home/components/navdrawer.dart';
+import 'package:fooddelivery/screens/home/main_home.dart';
 
 class ListGroceryMenu extends StatefulWidget {
   const ListGroceryMenu({Key? key}) : super(key: key);
@@ -23,20 +25,15 @@ class _ListGroceryMenuState extends State<ListGroceryMenu> {
             // physics: BouncingScrollPhysics(),
             scrollDirection: Axis.horizontal,
             child: Container(
-              color: Color(0xFFF9FAFB),
+              color: kLightTextColor,
               child: FittedBox(
                 fit: BoxFit.fill,
                 alignment: Alignment.topCenter,
                 child: Row(
                   children: <Widget>[
-                    MaterialButton(
-                        onPressed: () {}, child: Text('Rice & grains', style: TextStyle(fontSize:16,color: Color(0xFF38465A)),)),
-                    MaterialButton(
-                        onPressed: () {}, child: Text('cooking oils & ghee', style: TextStyle(fontSize:16,color: Color(0xFFA5ABB5)),)),
-                    MaterialButton(
-                        onPressed: () {}, child: Text('Spices & powders', style: TextStyle(color: Color(0xFFA5ABB5)))),
-                    MaterialButton(onPressed: () {}, child: Text('Rice')),
-                    MaterialButton(onPressed: () {}, child: Text('Rice')),
+                    CategoryButton(data: 'Rice & Grain' ,color: kSecondaryColor),
+                    CategoryButton(data: 'cooking oils & ghee', color: kMutedTextColor),
+                    CategoryButton(data: 'Spices & powders', color: kMutedTextColor),
                   ],
                 ),
               ),
@@ -65,6 +62,8 @@ class _ListGroceryMenuState extends State<ListGroceryMenu> {
     );
   }
 }
+
+
 
 Widget productTile(){
   return ListTile(
@@ -101,7 +100,7 @@ Widget productTile(){
                     children: [
                       Text('₹65'),
                       SizedBox(width: 10.0),
-                      Text('₹75', style: TextStyle(color: Colors.grey, fontSize: 14, fontWeight: FontWeight.w400,decoration: TextDecoration.lineThrough)),
+                      Text('₹75', style: TextStyle(color: kMutedTextColor, fontSize: 14, fontWeight: FontWeight.w400,decoration: TextDecoration.lineThrough)),
                     ],
                   ),
                 ),
@@ -111,11 +110,11 @@ Widget productTile(){
             Padding(
               padding: const EdgeInsets.only(top: 60.0, left: 50.0),
               child: MaterialButton(
-                color: Color(0xFFFAC82D),
-                textColor: Colors.white,
-                child: new Text("ADD", style: TextStyle(fontSize: 14, color: Color(0xFF38465A)),),
+                color: kYellowColor,
+                textColor: kWhiteColor,
+                child: new Text("ADD", style: TextStyle(fontSize: 14, color: kSecondaryColor),),
                 onPressed: () => {},
-                splashColor: Color(0xFF38465A),
+                splashColor: kSecondaryColor,
               ),
             ),
 
@@ -128,14 +127,11 @@ Widget productTile(){
 }
 
 
-
-
-
 Widget foodCard(){
   return Card(
     child: Container(
       decoration: BoxDecoration(
-        color: Colors.white
+        color: kWhiteColor
       ),
       child: Column(
         children: [
@@ -150,11 +146,11 @@ Widget foodCard(){
                     children: [
                       Text('₹65'),
                       SizedBox(width: 10.0),
-                      Text('₹75', style: TextStyle(color: Colors.grey, fontSize: 14, fontWeight: FontWeight.w400,decoration: TextDecoration.lineThrough)),
+                      Text('₹75', style: TextStyle(color: kMutedTextColor, fontSize: 14, fontWeight: FontWeight.w400,decoration: TextDecoration.lineThrough)),
                     ],
                   ),
                 ),
-                Text('STAYFREE COTTONY SOFT COVER RAGULAR ', style: TextStyle(fontSize: 14, fontWeight: FontWeight.w400, color: Color(0xFF38465A))),
+                Text('STAYFREE COTTONY SOFT COVER RAGULAR ', style: TextStyle(fontSize: 14, fontWeight: FontWeight.w400, color: kSecondaryColor)),
                 // Padding(
                 //   padding: const EdgeInsets.symmetric(vertical: 5.0),
                 //   child: Text(foodData[index].ingredients, style: TextStyle(fontSize: 12, fontWeight: FontWeight.w400, color: Colors.grey)),
@@ -166,21 +162,21 @@ Widget foodCard(){
                     children: [
                       MaterialButton(
                         minWidth:120,
-                        color: Color(0xFFFAC82D),
-                        textColor: Colors.white,
-                        child: new Text("ADD", style: TextStyle(fontSize: 12, color: Color(0xFF38465A)),),
+                        color: kPrimaryColor,
+                        textColor: kWhiteColor,
+                        child: new Text("ADD", style: TextStyle(fontSize: 12, color: kSecondaryColor),),
                         onPressed: () => {},
-                        splashColor: Color(0xFF38465A),
+                        splashColor: kSecondaryColor,
                       ),
                       Padding(
                         padding: const EdgeInsets.only(left:115),
                         child: MaterialButton(
                           minWidth:35,
-                          color: Color(0xFFFFBD00),
-                          textColor: Colors.white,
-                          child: new Text("+", style: TextStyle(fontSize: 12, color: Color(0xFF38465A)),),
+                          color: kYellowColor,
+                          textColor: kWhiteColor,
+                          child: new Text("+", style: TextStyle(fontSize: 12, color: kSecondaryColor),),
                           onPressed: () => {},
-                          splashColor: Color(0xFF38465A),
+                          splashColor: kSecondaryColor,
                         ),
                       ),
                     ],

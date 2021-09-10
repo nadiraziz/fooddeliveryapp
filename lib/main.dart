@@ -6,6 +6,7 @@ import 'package:fooddelivery/screens/authentication/new_password.dart';
 import 'package:fooddelivery/screens/authentication/sign_up.dart';
 import 'package:fooddelivery/screens/home/cart.dart';
 import 'package:fooddelivery/screens/home/category.dart';
+import 'package:fooddelivery/screens/home/main_home.dart';
 import 'package:fooddelivery/screens/home/grocery_menu.dart';
 import 'package:fooddelivery/screens/home/home.dart';
 import 'package:fooddelivery/screens/home/list_view_grocery.dart';
@@ -36,12 +37,12 @@ class MyApp extends StatelessWidget {
           brightness: Brightness.dark) ,
       initialRoute: HomePage.id,
       routes: {
+        HomePage.id: (context) => HomePage(),
         LoginPage.id: (context) => LoginPage(),
         ForgotPass.id: (context) => ForgotPass(),
         NewPass.id: (context) => NewPass(),
         SignUp.id: (context) => SignUp(),
         DeliveryAddress.id: (context) => DeliveryAddress(),
-        HomePage.id: (context) => HomePage(),
         CartPage.id: (context) => CartPage(),
         OrderSummary.id: (context) => OrderSummary(),
         MyAddress.id: (context) => MyAddress(),

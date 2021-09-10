@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:fooddelivery/constant.dart';
+import 'package:fooddelivery/screens/home/components/address_card.dart';
+import 'package:fooddelivery/screens/home/main_home.dart';
 
 
 
@@ -16,41 +19,41 @@ class _MyAddressState extends State<MyAddress> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color(0xFFFAC82D),
+        backgroundColor: kPrimaryColor,
         toolbarHeight: 80.0,
         title: Padding(
           padding: const EdgeInsets.only(right: 40.0, top: 20.0),
-          child: Center(child: Text("My Address", style: TextStyle(fontSize: 20, color: Color(0xFF283547), fontWeight: FontWeight.bold), textAlign: TextAlign.center,)),
+          child: Center(child: Text("My Address", style: TextStyle(fontSize: 20, color: kSecondaryColor, fontWeight: FontWeight.bold), textAlign: TextAlign.center,)),
         ),
         leading: Padding(
           padding: const EdgeInsets.only(top: 20.0),
           child: new IconButton(
-            icon: new Icon(Icons.arrow_back, color: Color(0xFF283547),),
+            icon: new Icon(Icons.arrow_back, color: kSecondaryColor),
             onPressed: () {Navigator.pop(context);},
           ),
         ),
       ),
       body: Container(
-        color: Color(0xFFE5E5E5),
+        color: kLightTextColor,
         child: Column(
           children: [
             Container(
               width: MediaQuery.of(context).size.width,
               decoration: BoxDecoration(
-                color: Colors.yellow[50],
+                color: kLightTextColor,
               ),
               child:Padding(
                 padding: const EdgeInsets.all(12.0),
                 child: OutlineButton(
                   child: Padding(
                     padding: const EdgeInsets.symmetric(vertical: 12.0),
-                    child: Text('+ ADD NEW ADDRESS', style: TextStyle(fontWeight: FontWeight.w500, fontSize: 14, color: Color(0xFFFFBD00)),),
+                    child: Text('+ ADD NEW ADDRESS', style: TextStyle(fontWeight: FontWeight.w500, fontSize: 14, color: kYellowColor),),
                   ),
-                  color: Color(0xFFFFD140),
+                  color: kPrimaryColor,
                   padding: EdgeInsets.all(8.0),
                   onPressed: (){},
                   borderSide: BorderSide(
-                    color: Color(0xFFFFD140),
+                    color: kPrimaryColor,
                   ),
                 ),
               )),
@@ -62,53 +65,16 @@ class _MyAddressState extends State<MyAddress> {
 
               shrinkWrap: true,
               itemBuilder: (BuildContext context, int index) {
-                return Card(
-                  child: RadioListTile(
-                    tileColor: Colors.white,
-                    contentPadding: EdgeInsets.all(20.0),
-                    groupValue: 1,
-                    value: 1,
-                    onChanged: (val) {  },
-                    title: Text('Farseen , Morayur '),
-                    subtitle: Text('Kottakunnan (h) po moayur  673642\nland mark : opposite arabic collage'),
-                  ),
-                );
+                return addressCard();
               },
               itemCount: 3,
             )
           ],
         ),
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Colors.white,
-        selectedLabelStyle: TextStyle(
-          color: Colors.black,
-        ),
-        unselectedLabelStyle: TextStyle(
-          color: Colors.black,
-        ),
-        currentIndex: _currentIndex,
-        onTap:(newIndex) => setState((){_currentIndex = newIndex;}),
-        type: BottomNavigationBarType.fixed, // this will be set when a new tab is tapped
-        items: [
-          BottomNavigationBarItem(
-            icon: Image.asset('assets/images/home_icon.png'),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            icon: Image.asset('assets/images/category_icon.png'),
-            label: 'Category',
-          ),
-          BottomNavigationBarItem(
-            icon: Image.asset('assets/images/offer_icon.png'),
-            label: 'Offer',
-          ),
-          BottomNavigationBarItem(
-            icon: Image.asset('assets/images/cart_icon.png'),
-            label: 'Cart',
-          )
-        ],
-      ),
+      bottomNavigationBar: BottomNav(),
     );
   }
+
+
 }

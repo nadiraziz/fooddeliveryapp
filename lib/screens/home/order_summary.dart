@@ -1,6 +1,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:fooddelivery/constant.dart';
+import 'package:fooddelivery/screens/home/main_home.dart';
 
 
 class OrderSummary extends StatefulWidget {
@@ -16,7 +18,7 @@ class _OrderSummaryState extends State<OrderSummary> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color(0xFFFAC82D),
+        backgroundColor: kPrimaryColor,
         toolbarHeight: 80.0,
         title: Padding(
           padding: const EdgeInsets.only(right: 40.0, top: 20.0),
@@ -31,13 +33,13 @@ class _OrderSummaryState extends State<OrderSummary> {
         ),
       ),
       body: Container(
-        color: Color(0xFFE5E5E5),
+        color: kLightTextColor,
         child: Column(
           children: [
             Container(
               width: MediaQuery.of(context).size.width,
               decoration: BoxDecoration(
-                color: Colors.white,
+                color: kWhiteColor,
               ),
               child: Card(
 
@@ -56,11 +58,11 @@ class _OrderSummaryState extends State<OrderSummary> {
                                 padding: const EdgeInsets.only(left: 34.0),
                                 child: OutlineButton(
                                   child: Text('Change', style: TextStyle(fontWeight: FontWeight.w400),),
-                                  color: Color(0xFFFFD140),
+                                  color: kPrimaryColor,
                                   padding: EdgeInsets.all(8.0),
                                   onPressed: (){},
                                   borderSide: BorderSide(
-                                    color: Color(0xFFFFD140),
+                                    color: kYellowColor,
                                   ),
                                 )
                             ),
@@ -131,7 +133,7 @@ class _OrderSummaryState extends State<OrderSummary> {
                 children: [
                   Container(
                       decoration: BoxDecoration(
-                          color: Color(0xFFFD7D06)
+                          color: kButtonOrangeTextColor
                       ),
                       width: MediaQuery.of(context).size.width - 56,
                       height: 56.0,
@@ -139,11 +141,11 @@ class _OrderSummaryState extends State<OrderSummary> {
                         children: [
                           Padding(
                             padding: const EdgeInsets.only(left: 22.0),
-                            child: Text('CHECK OUT',style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold, color: Colors.white)),
+                            child: Text('CHECK OUT',style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold, color: kWhiteColor)),
                           ),
                           Padding(
                             padding: const EdgeInsets.only(left: 190.0),
-                            child: Text('₹750',style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold, color: Colors.white)),
+                            child: Text('₹750',style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold, color: kWhiteColor)),
                           ),
                         ],
                       )
@@ -153,7 +155,7 @@ class _OrderSummaryState extends State<OrderSummary> {
                     height: 56.0,
                     minWidth: 56,
                     elevation: 0.0,
-                    color: Color(0xFFE67001),
+                    color: kButtonOrangeTextColor,
                     child: Container(
                       child: Icon(Icons.keyboard_arrow_right),
                     ),
@@ -164,36 +166,7 @@ class _OrderSummaryState extends State<OrderSummary> {
           ],
         ),
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Colors.white,
-        selectedLabelStyle: TextStyle(
-          color: Colors.black,
-        ),
-        unselectedLabelStyle: TextStyle(
-          color: Colors.black,
-        ),
-        currentIndex: _currentIndex,
-        onTap:(newIndex) => setState((){_currentIndex = newIndex;}),
-        type: BottomNavigationBarType.fixed, // this will be set when a new tab is tapped
-        items: [
-          BottomNavigationBarItem(
-            icon: Image.asset('assets/images/home_icon.png'),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            icon: Image.asset('assets/images/category_icon.png'),
-            label: 'Category',
-          ),
-          BottomNavigationBarItem(
-            icon: Image.asset('assets/images/offer_icon.png'),
-            label: 'Offer',
-          ),
-          BottomNavigationBarItem(
-            icon: Image.asset('assets/images/cart_icon.png'),
-            label: 'Cart',
-          )
-        ],
-      ),
+      bottomNavigationBar: BottomNav()
     );
   }
 }

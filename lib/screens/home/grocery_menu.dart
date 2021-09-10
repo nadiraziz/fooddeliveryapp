@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:fooddelivery/screens/home/components/bottom_nav.dart';
+import 'package:fooddelivery/constant.dart';
+import 'package:fooddelivery/screens/home/main_home.dart';
+import 'package:fooddelivery/screens/home/components/category_button.dart';
 import 'package:fooddelivery/screens/home/components/home_head.dart';
 import 'package:fooddelivery/screens/home/components/navdrawer.dart';
 
@@ -23,27 +25,15 @@ class _GroceryMenuState extends State<GroceryMenu> {
             // physics: BouncingScrollPhysics(),
             scrollDirection: Axis.horizontal,
             child: Container(
-              color: Color(0xFFF9FAFB),
-              // foregroundDecoration: BoxDecoration(
-              //     border: Border.all(color: Colors.grey),
-              // ),
-              // decoration: BoxDecoration(
-              //     border: Border.all(color: Colors.blueAccent)
-              // ),
-              // margin: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
+              color: kWhiteColor,
               child: FittedBox(
                 fit: BoxFit.fill,
                 alignment: Alignment.topCenter,
                 child: Row(
                   children: <Widget>[
-                    MaterialButton(
-                        onPressed: () {}, child: Text('Rice & grains')),
-                    MaterialButton(
-                        onPressed: () {}, child: Text('cooking oils & ghee', style: TextStyle(color: Color(0xFFA5ABB5)),)),
-                    MaterialButton(
-                        onPressed: () {}, child: Text('Spices & powders', style: TextStyle(color: Color(0xFFA5ABB5)))),
-                    MaterialButton(onPressed: () {}, child: Text('Rice')),
-                    MaterialButton(onPressed: () {}, child: Text('Rice')),
+                    CategoryButton(data: 'Rice & Grain' ,color: kSecondaryColor),
+                    CategoryButton(data: 'cooking oils & ghee', color: kMutedTextColor),
+                    CategoryButton(data: 'Spices & powders', color: kMutedTextColor),
                   ],
                 ),
               ),
@@ -114,11 +104,11 @@ Widget productTile(){
             Padding(
               padding: const EdgeInsets.only(top: 60.0, left: 50.0),
               child: MaterialButton(
-                color: Color(0xFFFAC82D),
-                textColor: Colors.white,
-                child: new Text("ADD", style: TextStyle(fontSize: 14, color: Color(0xFF38465A)),),
+                color: kPrimaryColor,
+                textColor: kWhiteColor,
+                child: new Text("ADD", style: TextStyle(fontSize: 14, color: kSecondaryColor),),
                 onPressed: () => {},
-                splashColor: Color(0xFF38465A),
+                splashColor: kSecondaryColor,
               ),
             ),
 

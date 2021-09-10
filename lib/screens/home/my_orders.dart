@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:fooddelivery/screens/home/components/bottom_nav.dart';
+import 'package:fooddelivery/constant.dart';
+import 'package:fooddelivery/screens/home/main_home.dart';
 
 class MyOrders extends StatefulWidget {
   const MyOrders({Key? key}) : super(key: key);
@@ -18,7 +19,7 @@ class _MyOrdersState extends State<MyOrders> {
     return Scaffold(
       appBar: AppBar(
         elevation: 0.9,
-        backgroundColor: Color(0xFFFAC82D),
+        backgroundColor: kPrimaryColor,
         toolbarHeight: 80.0,
         title: Padding(
           padding: const EdgeInsets.only(right: 40.0, top: 20.0),
@@ -27,7 +28,7 @@ class _MyOrdersState extends State<MyOrders> {
             "Order History ",
             style: TextStyle(
                 fontSize: 20,
-                color: Color(0xFF283547),
+                color: kSecondaryColor,
                 fontWeight: FontWeight.bold),
             textAlign: TextAlign.center,
           )),
@@ -37,7 +38,7 @@ class _MyOrdersState extends State<MyOrders> {
           child: new IconButton(
             icon: new Icon(
               Icons.arrow_back,
-              color: Color(0xFF283547),
+              color: kSecondaryColor,
             ),
             onPressed: () {
               Navigator.pop(context);
@@ -69,7 +70,7 @@ class _MyOrdersState extends State<MyOrders> {
                       ),
                     ),
                   ],
-                  color: Colors.white,
+                  color: kWhiteColor,
                 ),
                 child: Column(
                   children: [
@@ -87,7 +88,7 @@ class _MyOrdersState extends State<MyOrders> {
                                   const EdgeInsets.symmetric(vertical: 8.0),
                               child: Text('Delivery method : Local',
                                   style: TextStyle(
-                                      fontSize: 16, color: Colors.grey)),
+                                      fontSize: 16, color: kMutedTextColor)),
                             ),
                             Padding(
                               padding:
@@ -108,14 +109,14 @@ class _MyOrdersState extends State<MyOrders> {
                         child: OutlinedButton(
                           onPressed: () {},
                           child: Text('Cancel',
-                              style: TextStyle(color: Color(0xFF283547))),
+                              style: TextStyle(color: kSecondaryColor)),
                         ),
                       ),
                     ),
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 20.0),
                       child: Divider(
-                        color: Colors.grey,
+                        color: kMutedTextColor,
                       ),
                     ),
                     Padding(
@@ -133,7 +134,7 @@ class _MyOrdersState extends State<MyOrders> {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: <Widget>[
                                     Divider(
-                                      color: Colors.grey,
+                                      color: kMutedTextColor,
                                     ),
                                     ListTile(
                                       leading: Column(
@@ -160,7 +161,7 @@ class _MyOrdersState extends State<MyOrders> {
                                       ),
                                     ),
                                     Divider(
-                                      color: Colors.grey,
+                                      color: kMutedTextColor,
                                     ),
                                     SizedBox(height: 20),
                                     ListTile(
@@ -230,7 +231,7 @@ class _MyOrdersState extends State<MyOrders> {
 List<ItemModel> itemData = <ItemModel>[
   ItemModel(
       headerItem: 'Details',
-      colorsItem: Color(0xFF283547),
+      colorsItem: kSecondaryColor,
       img: 'assets/images/ashirvaad.png'),
 ];
 

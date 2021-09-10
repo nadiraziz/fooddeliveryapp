@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:fooddelivery/constant.dart';
+import 'package:fooddelivery/screens/home/main_home.dart';
 
 class Status extends StatefulWidget {
 
@@ -16,39 +18,7 @@ class _StatusState extends State<Status> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: networkError,
-      bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Colors.white,
-        selectedLabelStyle: TextStyle(
-          color: Colors.black,
-        ),
-        unselectedLabelStyle: TextStyle(
-          color: Colors.black,
-        ),
-        currentIndex: _currentIndex,
-        onTap: (newIndex) => setState(() {
-          _currentIndex = newIndex;
-        }),
-        type: BottomNavigationBarType.fixed,
-        // this will be set when a new tab is tapped
-        items: [
-          BottomNavigationBarItem(
-            icon: Image.asset('assets/images/home_icon.png'),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            icon: Image.asset('assets/images/category_icon.png'),
-            label: 'Category',
-          ),
-          BottomNavigationBarItem(
-            icon: Image.asset('assets/images/offer_icon.png'),
-            label: 'Offer',
-          ),
-          BottomNavigationBarItem(
-            icon: Image.asset('assets/images/cart_icon.png'),
-            label: 'Cart',
-          )
-        ],
-      ),
+      bottomNavigationBar: BottomNav(),
     );
   }
 }
@@ -78,10 +48,10 @@ class StatusContent extends StatelessWidget {
               padding: const EdgeInsets.all(12.0),
               child: Image.asset(statusImg),
             ),
-            Text(statusTitle, style: TextStyle(color: Color(0xFF38465A), fontSize: 20, fontWeight: FontWeight.bold)),
+            Text(statusTitle, style: TextStyle(color: kSecondaryColor, fontSize: 20, fontWeight: FontWeight.bold)),
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: Text(statusSubtitle, style: TextStyle(color: Color(0xFF38465A), fontSize: 16), textAlign: TextAlign.center,),
+              child: Text(statusSubtitle, style: TextStyle(color: kSecondaryColor, fontSize: 16), textAlign: TextAlign.center,),
             ),
             SizedBox(
               height: 20.0,
@@ -89,9 +59,9 @@ class StatusContent extends StatelessWidget {
             ElevatedButton(
                 style: ElevatedButton.styleFrom(
                   // primary: Color(0xFF#FFBD00),
-                  primary: Color(0xFFFFBD00),
-                  onPrimary: Color(0xFFFFBD00),
-                  onSurface: Color(0xFFFFD140),
+                  primary: kYellowColor,
+                  onPrimary: kYellowColor,
+                  onSurface: kPrimaryColor,
                   shape: RoundedRectangleBorder(
                     borderRadius: new BorderRadius.circular(5.0),
                   ),
@@ -100,7 +70,7 @@ class StatusContent extends StatelessWidget {
                 onPressed: (){},
                 child: Padding(
                   padding: const EdgeInsets.all(15.0),
-                  child: Text(buttonText, style: TextStyle(color: Color(0xFF38465A), fontSize: 16),),
+                  child: Text(buttonText, style: TextStyle(color: kSecondaryColor, fontSize: 16),),
                 )),
           ],
         ),

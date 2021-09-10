@@ -1,7 +1,7 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:fooddelivery/screens/home/components/bottom_nav.dart';
+import 'package:fooddelivery/constant.dart';
+import 'package:fooddelivery/screens/home/main_home.dart';
 import 'package:fooddelivery/screens/home/my_address.dart';
 import 'package:fooddelivery/screens/home/order_summary.dart';
 
@@ -14,33 +14,32 @@ class CartPage extends StatefulWidget {
 }
 
 class _CartPageState extends State<CartPage> {
-  int _currentIndex = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color(0xFFFAC82D),
+        backgroundColor: kPrimaryColor,
         toolbarHeight: 80.0,
         title: Padding(
           padding: const EdgeInsets.only(right: 40.0, top: 20.0),
-          child: Center(child: Text("My Cart", style: TextStyle(fontSize: 20, color: Color(0xFF283547), fontWeight: FontWeight.bold), textAlign: TextAlign.center,)),
+          child: Center(child: Text("My Cart", style: TextStyle(fontSize: 20, color: kSecondaryColor, fontWeight: FontWeight.bold), textAlign: TextAlign.center,)),
         ),
         leading: Padding(
           padding: const EdgeInsets.only(top: 20.0),
           child: new IconButton(
-            icon: new Icon(Icons.arrow_back, color: Color(0xFF283547),),
+            icon: new Icon(Icons.arrow_back, color: kSecondaryColor,),
             onPressed: () {},
           ),
         ),
       ),
       body: Container(
-        color: Color(0xFFE5E5E5),
+        color: kLightTextColor,
         child: Column(
           children: [
             Container(
               width: MediaQuery.of(context).size.width,
               decoration: BoxDecoration(
-                color: Colors.white,
+                color: kWhiteColor,
               ),
               child: Card(
 
@@ -59,7 +58,7 @@ class _CartPageState extends State<CartPage> {
                               padding: const EdgeInsets.only(left: 34.0),
                               child: OutlineButton(
                                 child: Text('Change', style: TextStyle(fontWeight: FontWeight.w400),),
-                                color: Color(0xFFFFD140),
+                                color: kPrimaryColor,
                                 padding: EdgeInsets.all(8.0),
                                 onPressed: (){
                                   Navigator.push(
@@ -67,7 +66,7 @@ class _CartPageState extends State<CartPage> {
                                   MaterialPageRoute(builder: (context) => MyAddress()),
                                 );},
                                 borderSide: BorderSide(
-                                  color: Color(0xFFFFD140),
+                                  color: kPrimaryColor,
                                 ),
                               )
                               ),
@@ -116,7 +115,7 @@ class _CartPageState extends State<CartPage> {
                                     children: [
                                       Text('₹65'),
                                       SizedBox(width: 10.0),
-                                      Text('₹75', style: TextStyle(color: Colors.grey, fontSize: 14, fontWeight: FontWeight.w400,decoration: TextDecoration.lineThrough)),
+                                      Text('₹75', style: TextStyle(color: kMutedTextColor, fontSize: 14, fontWeight: FontWeight.w400,decoration: TextDecoration.lineThrough)),
                                     ],
                                   ),
                                 ),
@@ -133,24 +132,24 @@ class _CartPageState extends State<CartPage> {
                                       MaterialButton(
                                         height: 32.0,
                                         minWidth: 32.0,
-                                        color: Color(0xFFFAC82D),
-                                        textColor: Colors.white,
-                                        child: new Text("-", style: TextStyle(fontSize: 20, color: Color(0xFF38465A)),),
+                                        color: kPrimaryColor,
+                                        textColor: kSecondaryColor,
+                                        child: new Text("-", style: TextStyle(fontSize: 20, color: kSecondaryColor),),
                                         onPressed: () => {},
-                                        splashColor: Color(0xFF38465A),
+                                        splashColor: kSecondaryColor,
                                       ),
-                                      Text('1', style: TextStyle(fontSize: 18,fontWeight: FontWeight.w500, color: Color(0xFF38465A)),),
+                                      Text('1', style: TextStyle(fontSize: 18,fontWeight: FontWeight.w500, color: kSecondaryColor)),
                                       // ElevatedButton(
                                       //   onPressed: (){},
                                       //   child: Text('+'))
                                       MaterialButton(
                                         height: 32.0,
                                         minWidth: 32.0,
-                                        color: Color(0xFFFAC82D),
-                                        textColor: Colors.white,
-                                        child: new Text("+", style: TextStyle(fontSize: 20, color: Color(0xFF38465A)),),
+                                        color: kYellowColor,
+                                        textColor: kWhiteColor,
+                                        child: new Text("+", style: TextStyle(fontSize: 20, color: kSecondaryColor),),
                                         onPressed: () => {},
-                                        splashColor: Color(0xFF38465A),
+                                        splashColor: kSecondaryColor,
                                       ),
                                     ],
                                   )
@@ -173,11 +172,11 @@ class _CartPageState extends State<CartPage> {
                   children: [
                     Container(
                         decoration: BoxDecoration(
-                            color: Color(0xFFFD7D06)
+                            color: kButtonOrangeTextColor
                         ),
                         width: MediaQuery.of(context).size.width - 125,
                         height: 56.0,
-                        child: Center(child: Text('PLACE ORDER',style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold, color: Colors.white)))
+                        child: Center(child: Text('PLACE ORDER',style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold, color: kWhiteColor)))
                     ),
                     MaterialButton(
                       onPressed: () {
@@ -189,8 +188,8 @@ class _CartPageState extends State<CartPage> {
                       height: 56.0,
                       minWidth: 125,
                       elevation: 0.0,
-                      color: Color(0xFFE67001),
-                      child:Center(child: Text('₹750',style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold, color: Colors.white))),
+                      color: kButtonOrangeTextColor,
+                      child:Center(child: Text('₹750',style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold, color: kWhiteColor))),
                     )
                   ],
                 ),

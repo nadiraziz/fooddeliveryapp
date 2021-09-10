@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:fooddelivery/screens/home/components/bottom_nav.dart';
+import 'package:fooddelivery/constant.dart';
+import 'package:fooddelivery/screens/home/main_home.dart';
 import 'package:fooddelivery/screens/home/components/home_head.dart';
 import 'components/navdrawer.dart';
 
@@ -51,7 +52,7 @@ class _MenuState extends State<Menu> {
                             color: Color.fromRGBO(56, 70, 90, 0.2),
                             width: 0.66,
                           ),
-                          color: Colors.white
+                          color: kWhiteColor
                         ),
                         child: Container(
                           child: Row(
@@ -64,10 +65,10 @@ class _MenuState extends State<Menu> {
                                 padding: const EdgeInsets.symmetric( vertical: 24.0),
                                 child: Column(
                                   children: [
-                                    Text(foodData[index].foodName, style: TextStyle(fontSize: 18, fontWeight: FontWeight.w400, color: Color(0xFF38465A))),
+                                    Text(foodData[index].foodName, style: TextStyle(fontSize: 18, fontWeight: FontWeight.w400, color: kSecondaryColor)),
                                     Padding(
                                       padding: const EdgeInsets.symmetric(vertical: 5.0),
-                                      child: Text(foodData[index].ingredients, style: TextStyle(fontSize: 12, fontWeight: FontWeight.w400, color: Colors.grey)),
+                                      child: Text(foodData[index].ingredients, style: TextStyle(fontSize: 12, fontWeight: FontWeight.w400, color: kMutedTextColor)),
                                     )
                                   ],
                                 ),
@@ -100,12 +101,12 @@ class ResturantMenu{
 }
 
 List<ResturantMenu> foodData = <ResturantMenu> [
-  ResturantMenu(foodName: 'Mexican fried chicken', ingredients: 'Combo, broast , chaines, pizza..', foodImg: 'assets/images/resturants/1.png'),
-  ResturantMenu(foodName: 'Sulthan palace', ingredients: 'arabian, broast , chaines, pizza..', foodImg: 'assets/images/resturants/2.png'),
-  ResturantMenu(foodName: '31 August resto cafe', ingredients: 'pastry, shawarma, juice, combo', foodImg: 'assets/images/resturants/3.png'),
-  ResturantMenu(foodName: 'Razin restaturnt', ingredients: 'biriyani, porotta, juice,  ', foodImg: 'assets/images/resturants/2.png'),
-  ResturantMenu(foodName: 'Mexican fried chicken', ingredients: 'Combo, broast , chaines, pizza..', foodImg: 'assets/images/resturants/4.png'),
-  ResturantMenu(foodName: 'Mexican fried chicken', ingredients: 'Combo, broast , chaines, pizza..', foodImg: 'assets/images/resturants/3.png'),
+  ResturantMenu(foodName: 'Mexican fried chicken', ingredients: 'Combo, broast , chaines, pizza..', foodImg: 'assets/images/restaurants/1.png'),
+  ResturantMenu(foodName: 'Sulthan palace', ingredients: 'arabian, broast , chaines, pizza..', foodImg: 'assets/images/restaurants/2.png'),
+  ResturantMenu(foodName: '31 August resto cafe', ingredients: 'pastry, shawarma, juice, combo', foodImg: 'assets/images/restaurants/3.png'),
+  ResturantMenu(foodName: 'Razin restaurants', ingredients: 'biriyani, porotta, juice,  ', foodImg: 'assets/images/restaurants/2.png'),
+  ResturantMenu(foodName: 'Mexican fried chicken', ingredients: 'Combo, broast , chaines, pizza..', foodImg: 'assets/images/restaurants/4.png'),
+  ResturantMenu(foodName: 'Mexican fried chicken', ingredients: 'Combo, broast , chaines, pizza..', foodImg: 'assets/images/restaurants/3.png'),
 
 ];
 
